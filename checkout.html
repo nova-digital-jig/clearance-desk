@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- lock: eco2 2026-08-25 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clearance Desk — order form (draft)</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>button.pay { font: inherit; cursor: pointer; }</style>
+</head>
+<body>
+  <header>
+    <div class="brand">Clearance Desk</div>
+    <nav>
+      <a href="index.html">Offer</a>
+      <a href="checkout.html">Order form</a>
+      <a href="thanks.html">Confirmation draft</a>
+    </nav>
+  </header>
+  <main>
+    <p class="banner">Public static preview. Collection is disabled / not live. Amounts are LIST prices, not a charge. Verified collected = $0. This control does not take money. There is no processor. No Stripe keys on this page.</p>
+    <h1>Clearance Desk — order form (DRAFT)</h1>
+    <p class="sub">B2B only. Pre-cert is a hard no (not a selectable path). Over 100 questions = stop and re-scope. Form does not proceed without the ownership checkbox.</p>
+
+    <form id="order" method="post" action="#pay" novalidate>
+      <label for="company">Company (legal name)</label>
+      <input id="company" name="company" autocomplete="organization" required>
+
+      <label for="role">Role</label>
+      <select id="role" name="role" required>
+        <option value="CTO">CTO</option>
+        <option value="Founder">Founder</option>
+        <option value="Other">Other (specify in note)</option>
+      </select>
+
+      <label for="email">Work email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="report">Report held</label>
+      <select id="report" name="report" required>
+        <option value="">Select…</option>
+        <option value="SOC 2">SOC 2</option>
+        <option value="ISO 27001">ISO 27001</option>
+        <option value="Both">Both</option>
+      </select>
+      <p class="note">Neither / pre-cert is not offered. That path is a hard no.</p>
+
+      <label for="qname">Questionnaire name (buyer + file name)</label>
+      <input id="qname" name="qname" required>
+
+      <label for="qcount">Question count</label>
+      <input id="qcount" name="qcount" type="number" inputmode="numeric" min="1" max="100" required>
+      <p class="note" id="qcount-msg" hidden>Stop. Over 100 questions — we do not take the order. Re-scope. This form will not submit.</p>
+
+      <label for="evidence">Evidence status</label>
+      <select id="evidence" name="evidence" required>
+        <option value="ready">Pack ready to send</option>
+        <option value="partial">Partial list (clock does not start until the pack arrives)</option>
+        <option value="none">None (do not start)</option>
+      </select>
+
+      <label for="reviewer">Named reviewer (name + work email)</label>
+      <input id="reviewer" name="reviewer" required>
+
+      <label for="sku">SKU</label>
+      <select id="sku" name="sku" required>
+        <option value="A">SKU A — $750 USD LIST, prepaid</option>
+        <option value="B">SKU B — $2,000 USD LIST, prepaid</option>
+      </select>
+
+      <label for="note">Optional note (do not paste credentials or keys)</label>
+      <textarea id="note" name="note" rows="3"></textarea>
+
+      <label class="own">
+        <input id="own" type="checkbox" name="own" value="yes" required>
+        <span>I understand Clearance Desk drafts from the evidence I supply. I (or my CISO / counsel) will review, edit, and submit. Mortal Revenue Foundry does not sign representations or certifications about our controls and does not promise the buyer will accept the packet.</span>
+      </label>
+      <p class="note" id="own-msg" hidden>Without this box, the form does not proceed.</p>
+
+      <p><strong>LIST PRICE — not a charge.</strong> SKU A $750 USD LIST. SKU B $2,000 USD LIST.</p>
+      <button type="submit" class="pay" id="pay">UNAUTHORIZED / not live</button>
+      <p class="note">Collection is not authorized. This control does not take money. There is no processor. If you can see this form, you are reading a public static preview. Collection is not live. No card field. No Stripe. Method is POST to #pay — work email and company do not land in the URL.</p>
+    </form>
+  </main>
+  <footer>
+    We do not collect personal phone, home address, government IDs, production credentials, or buyer-portal passwords on this form.
+    <a href="thanks.html">Draft confirmation page (no payment has occurred)</a>
+  </footer>
+  <script>
+  (function () {
+    var form = document.getElementById("order");
+    var own = document.getElementById("own");
+    var ownMsg = document.getElementById("own-msg");
+    var qcount = document.getElementById("qcount");
+    var qMsg = document.getElementById("qcount-msg");
+    var report = document.getElementById("report");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var n = Number(qcount.value);
+      var blocked = false;
+      if (!own.checked) {
+        ownMsg.hidden = false;
+        blocked = true;
+      } else {
+        ownMsg.hidden = true;
+      }
+      if (!Number.isFinite(n) || n < 1 || n > 100) {
+        qMsg.hidden = false;
+        blocked = true;
+      } else {
+        qMsg.hidden = true;
+      }
+      if (!report.value || /neither/i.test(report.value)) {
+        blocked = true;
+      }
+      if (blocked) return false;
+      window.location.hash = "pay";
+      return false;
+    });
+  })();
+  </script>
+</body>
+</html>
