@@ -55,7 +55,7 @@
       <label for="evidence">Evidence status</label>
       <select id="evidence" name="evidence" required>
         <option value="ready">Pack ready to send</option>
-        <option value="partial">Partial list (clock does not start until the pack arrives)</option>
+        <option value="partial">Partial list (that unit’s clock does not start; a clock starts only after payment, the questionnaire is named, its file and evidence are complete, a reviewer is named, and a slot is free)</option>
         <option value="none">None (do not start)</option>
       </select>
 
@@ -67,6 +67,7 @@
         <option value="A">SKU A — $750 USD LIST, prepaid</option>
         <option value="B">SKU B — $2,000 USD LIST, prepaid</option>
       </select>
+      <p class="note">SKU B is a six-month entitlement to three named questionnaires. This form names the first unit only. At most two occupy active slots. Each unit has its own five-business-day clock, which starts only after payment, that unit is named, its file and evidence are complete, a reviewer is named, and a slot is free. A third ready item queues; its clock has not started. Not all three in one five-day window.</p>
 
       <label for="note">Optional note (do not paste credentials or keys)</label>
       <textarea id="note" name="note" rows="3"></textarea>
