@@ -22,7 +22,7 @@
     </nav>
   </header>
   <main>
-    <p class="banner">Public static preview. Collection is disabled / not live. Amounts are LIST prices, not a charge. Verified collected = $0. This control does not take money. There is no processor. No Stripe keys on this page.</p>
+    <p class="banner">Public static preview. Collection is disabled / not live. The intended first LIVE test is one $350 SKU A founding pilot; $750 and $2,000 remain LIST references. Verified collected = $0. This control does not take money. There is no processor. No Stripe keys on this page.</p>
     <h1>Clearance Desk — order form (DRAFT)</h1>
     <p class="sub">B2B only. Pre-cert is a hard no (not a selectable path). Over 100 questions = stop and re-scope. Form does not proceed without the ownership checkbox.</p>
 
@@ -68,10 +68,10 @@
 
       <label for="sku">SKU</label>
       <select id="sku" name="sku" required>
-        <option value="A">SKU A — $750 USD LIST, prepaid</option>
-        <option value="B">SKU B — $2,000 USD LIST, prepaid</option>
+        <option value="A">SKU A founding pilot — $350 USD test price ($750 LIST)</option>
+        <option value="B" disabled>SKU B — $2,000 USD LIST; activation held until first pilot delivery</option>
       </select>
-      <p class="note">SKU B is a six-month entitlement to three named questionnaires. This form names the first unit only. At most two occupy active slots. Each unit has its own five-business-day clock, which starts only after payment, that unit is named, its file and evidence are complete, a reviewer is named, and a slot is free. A third ready item queues; its clock has not started. Not all three in one five-day window.</p>
+      <p class="note">The founding pilot is one named questionnaire, up to 100 questions, with one five-business-day clock after every start gate passes. SKU B remains a six-month LIST concept for three named questionnaires, but it will not activate until the first pilot is delivered and reconciled.</p>
 
       <label for="note">Optional note (do not paste credentials or keys)</label>
       <textarea id="note" name="note" rows="3"></textarea>
@@ -82,7 +82,7 @@
       </label>
       <p class="note" id="own-msg" hidden>Without this box, the form does not proceed.</p>
 
-      <p><strong>LIST PRICE — not a charge.</strong> SKU A $750 USD LIST. SKU B $2,000 USD LIST.</p>
+      <p><strong>TEST PRICE — not a charge.</strong> Intended first LIVE offer: one eligible SKU A founding pilot at $350 USD. LIST references remain SKU A $750 and SKU B $2,000.</p>
       <button type="submit" class="pay" id="pay">UNAUTHORIZED / not live</button>
       <p class="note">Collection is not authorized. This control does not take money. There is no processor. If you can see this form, you are reading a public static preview. Collection is not live. No card field. No Stripe. Method is POST to #pay — work email and company do not land in the URL.</p>
     </form>
