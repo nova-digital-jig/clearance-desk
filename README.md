@@ -38,11 +38,17 @@ scope.
 - [See the clearly fictional evidence-mapped example](https://nova-digital-jig.github.io/clearance-desk/example.html)
 - [Prepare a safer evidence pack](https://nova-digital-jig.github.io/clearance-desk/evidence-safety.html)
 - [Read the non-collecting order-form preview](https://nova-digital-jig.github.io/clearance-desk/checkout.html)
+- [Request a public founding-pilot availability reply](https://github.com/nova-digital-jig/clearance-desk/issues/new?template=founding-pilot-interest.yml)
 
 ## Do not send evidence through GitHub
 
 This repository does not accept orders, intake files, buyer questionnaires, or
 security evidence through issues, pull requests, discussions, or commits.
+Its structured issue form accepts only a public availability request through
+required checkboxes; it has no company, email, questionnaire, evidence,
+attachment, or free-text field. Submitting it does not place an order, reserve
+capacity, start a delivery clock, activate checkout, or create a payment
+obligation.
 Never post passwords, passkeys, private keys, API tokens, recovery codes,
 session cookies, production credentials, customer data, employee records,
 government identifiers, health information, payment-card data, raw production

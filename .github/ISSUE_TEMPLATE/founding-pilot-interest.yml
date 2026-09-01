@@ -1,0 +1,34 @@
+name: Request founding-pilot availability
+description: Ask for a public reply if the $350 Clearance Desk founding pilot becomes available.
+title: "[Founding pilot interest]"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form creates a **public GitHub issue**. It has no free-text field and is only an availability request.
+
+        Do not add a company name, work email, questionnaire name, buyer name, evidence, attachment, credential, customer data, control detail, vulnerability detail, or other private or confidential information. If a public record is not appropriate, do not submit this form.
+
+        Submitting does not place an order, reserve capacity, start a delivery clock, activate checkout, or create a payment obligation.
+
+  - type: checkboxes
+    id: eligibility
+    attributes:
+      label: Eligibility and public-data boundary
+      options:
+        - label: I am 18 or older and this request is for an adult business or professional use case.
+          required: true
+        - label: The business already holds a current SOC 2 or ISO 27001 report and has a live named security questionnaire; I will not identify either one here.
+          required: true
+        - label: I understand this issue and all replies are public.
+          required: true
+        - label: I will not post evidence, questionnaire content, private data, restricted data, credentials, attachments, or confidential details here.
+          required: true
+
+  - type: checkboxes
+    id: next_step
+    attributes:
+      label: Requested next step
+      options:
+        - label: Reply in this public issue if a $350 Clearance Desk founding-pilot intake becomes available. I understand live checkout is not active and this does not reserve a slot.
+          required: true
