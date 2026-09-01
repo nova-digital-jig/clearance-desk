@@ -35,6 +35,7 @@ scope.
 
 - [Review the exact offer and exclusions](https://nova-digital-jig.github.io/clearance-desk/)
 - [Run the seven-point readiness checklist](https://nova-digital-jig.github.io/clearance-desk/readiness.html)
+- [Prepare a customer security questionnaire response packet](https://nova-digital-jig.github.io/clearance-desk/questionnaire-response-guide.html)
 - [See the clearly fictional evidence-mapped example](https://nova-digital-jig.github.io/clearance-desk/example.html)
 - [Prepare a safer evidence pack](https://nova-digital-jig.github.io/clearance-desk/evidence-safety.html)
 - [Read the non-collecting order-form preview](https://nova-digital-jig.github.io/clearance-desk/checkout.html)
